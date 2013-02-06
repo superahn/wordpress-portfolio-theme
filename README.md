@@ -15,6 +15,7 @@ Copy wordpress-protolio-theme/ folder to YOUR_WORDPRESS_SITE/wp-content/themes
 
 Directory heirachy will be...
 
+```php
 YOUR_WORDPRESS_SITE/
   /wp-admin/
   /wp-content/
@@ -27,3 +28,4 @@ YOUR_WORDPRESS_SITE/
   ...
   index.php
   ...
+```
