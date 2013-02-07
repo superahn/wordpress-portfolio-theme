@@ -57,7 +57,7 @@
 01 Import Fonts
 ---------------------------------------------------------------------------------------------------- */
 
-@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
 
 
 /*
@@ -348,7 +348,19 @@ h2 a:visited,
 
 #wrap {
 	margin: 0 auto;
-	max-width: 1152px;
+}
+
+.full-width-content #content,
+#header > .wrap,
+#intro,
+#inner {
+	margin: 0 auto;
+	/*min-height: 70px;*/
+	width: 1152px;
+}
+
+#intro {
+	margin: 50px auto;
 }
 
 #inner {
@@ -356,6 +368,7 @@ h2 a:visited,
 	overflow: hidden;
 	padding-top: 40px;
 	padding-top: 2.5rem;
+	margin: 50px auto;
 }
 
 /* 04b - 1152px CSS Grid ----------- */
@@ -429,12 +442,17 @@ h2 a:visited,
 
 /* 04c - Header ----------- */
 
+
 #header {
-	border-bottom: 2px solid #1e1e1e;
+	background: url(images/blue-1.png) repeat-x top,
+	 url(images/bg-top.png) repeat-x top;
+  	/*border-bottom: 2px solid #1e1e1e;*/
+  	margin: 0 auto;
 	min-height: 120px;
 	overflow: hidden;
 	padding-bottom: 32px;
 	padding-bottom: 2rem;
+	z-index: 10;
 }
 
 #title {
@@ -853,6 +871,21 @@ h6,
 	margin-bottom: 1.5rem;
 }
 
+#header .menu {
+	border-bottom: none;
+}
+
+#header h1 {
+}
+
+#intro h1 {
+	color: #49240d;
+	font-family: 'Lato', Georgia, serif;	
+}
+
+#intro h1 strong {
+	color: #CC0000;	
+}
 
 /*
 07 Lists
@@ -1248,9 +1281,24 @@ p.wp-caption-text {
 @media only screen and (max-width: 1024px) {
 
 	#wrap {
-		max-width: 960px;
+		/*max-width: 960px;*/
+		margin: 0 auto;
+		padding: 0;
 	}	
 
+	/* General */
+	#header > .wrap,
+	.full-width-content #content,
+	#intro,
+	#inner,
+	#footer .wrap  {
+		width: 960px;
+	}
+	
+	#header > .wrap {
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
 }
 
 /* iPads (portrait) ----------- */
@@ -1258,9 +1306,18 @@ p.wp-caption-text {
 @media only screen and (max-width: 768px) {
 
 	#wrap {
-		padding: 0 5%;
+		padding: 0;
 	}
 
+	/* General */
+	#header > .wrap,
+	.full-width-content #content,
+	#intro,
+	#inner,
+	#footer .wrap {
+		width: 90%;
+	}
+	
 	.footer-widgets-1,
 	.footer-widgets-2,
 	.footer-widgets-3,
@@ -1268,7 +1325,6 @@ p.wp-caption-text {
 	#footer .creds,
 	#footer .gototop,
 	#header .widget-area,
-	#inner,
 	#title-area,
 	#wrap .sidebar,
 	#wrap #content,
@@ -1334,7 +1390,7 @@ p.wp-caption-text {
 	html {
 		font-size: 87.5%; /* 14px base */
 	}
-
+	
 	#header .search-form {
 		width: 100%;
 	}
